@@ -29,6 +29,14 @@ public class GuidComponent : MonoBehaviour, ISerializationCallbackReceiver
     }
 
 
+    // In case we want to override the Guid, for example on
+    // custom load from file
+    public void SetGuid(System.Guid guid)
+    {
+        this.guid = guid;
+    }
+
+
     // When de-serializing or creating this component, we want to either restore our serialized GUID
     // or create a new one.
     void CreateGuid()
